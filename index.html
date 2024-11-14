@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magazine Design - Giancarlo A. Haidar's Portfolio</title>
+    <!-- Link to Google Fonts for Roboto and Archivo -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Archivo:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      /* Basic Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        line-height: 1.6;
+        color: #333;
+        scroll-behavior: smooth;
+        font-family: 'Archivo', sans-serif;
+      }
+
+      /* Full-width Container */
+      .container {
+        width: 100%;
+        padding: 0 60px;
+        max-width: 1600px;
+        margin: auto;
+      }
+
+      /* Header */
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        background-color: #ffffff;
+        padding: 15px 60px;
+        z-index: 1000;
+        font-family: 'Roboto', sans-serif;
+      }
+
+      /* Header Bottom Border Line within Padding */
+      .header::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 60px;
+        right: 60px;
+        height: 2px;
+        background-color: #f6f6f6;
+      }
+
+      .header-left {
+        text-align: left;
+      }
+
+      .header h1,
+      .header h2 {
+        font-weight: 400;
+      }
+
+      .header h1 {
+        font-size: 1.5rem;
+        color: #333;
+      }
+
+      .header h2 {
+        font-size: 1rem;
+        color: #777;
+      }
+
+      /* Centered Navigation Links */
+      .header-center {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 60px;
+      }
+
+      .header-center a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+        font-size: 1.1rem;
+        position: relative;
+      }
+
+      /* Overline on "Show" instead of "Tell" */
+      .header-center a:first-child.active::before {
+        content: '';
+        position: absolute;
+        top: -4px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #333;
+      }
+
+      /* Mark-style Highlight on Hover */
+      .header-center a:hover {
+        background-color: #f6f6f6;
+      }
+
+      /* Exit Button Style */
+      .header-right a {
+        color: #333;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        transition: color 0.3s;
+      }
+
+      .header-right a:hover {
+        color: #0073b1;
+      }
+
+      /* Project Showcase Section */
+      .project-showcase {
+        padding: 40px 60px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .project-title {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #333;
+        margin: 20px 0;
+        text-align: center;
+      }
+
+      .project-description {
+        font-size: 1rem;
+        color: #666;
+        margin: 20px 0;
+        max-width: 800px;
+        text-align: center;
+      }
+
+      /* Project Media Section for Stacked Images */
+      .project-images-stacked {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        max-width: 800px; /* Centered max width */
+      }
+
+      .project-image {
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      /* Ensure image doesn't stretch */
+      .project-image img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
+
+      /* Footer */
+      .footer {
+        padding: 20px 60px;
+        font-size: 1rem;
+        color: #666;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        background-color: transparent;
+        font-family: 'Roboto', sans-serif;
+        position: relative;
+      }
+
+      /* Full-width Footer Line */
+      .footer::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background-color: #f6f6f6;
+      }
+
+      .footer .footer-section {
+        display: flex;
+        flex-direction: column;
+        margin-right: 40px;
+      }
+
+      .footer .footer-section a {
+        color: #333;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+      }
+
+      .footer .footer-section a:hover {
+        background-color: #f6f6f6;
+      }
+
+      .footer .contact-message {
+        text-align: left;
+        font-size: 1.2rem;
+        color: #555;
+        margin-right: 40px;
+      }
+
+      .footer .email {
+        text-align: left;
+        font-size: 1rem;
+        color: #333;
+        margin-top: 5px;
+      }
+
+      .footer .last-updated {
+        font-size: 1rem;
+        color: #888;
+        margin-right: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header with Centered Navigation -->
+    <header class="header">
+      <div class="header-left">
+        <h1>Giancarlo A. Haidar</h1>
+        <h2>GBDA Student</h2>
+      </div>
+      <div class="header-center">
+        <a href="#SHOW" target="_self" class="active">Show</a>
+        <a href="#TELL" target="_self">Tell</a>
+      </div>
+      <div class="header-right">
+        <a href="index.html" target="_self">X</a>
+      </div>
+    </header>
+
+    <!-- Project Showcase Section -->
+    <div class="container project-showcase">
+      <h2 class="project-title">Magazine Design</h2>
+      <p class="project-description">
+        This magazine combines all my GBDA 101 projects into a comprehensive and descriptive layout. It covers the process and journey of designing at university for the first time, reflecting on each project’s development and creative insight.
+      </p>
+
+      <!-- Project Media Section with Stacked Images -->
+      <div class="project-images-stacked">
+        <!-- Image 1 -->
+        <div class="project-image">
+          <img src="magazine_design_1.jpg" alt="Magazine Design Page 1">
+        </div>
+        <!-- Image 2 -->
+        <div class="project-image">
+          <img src="magazine_design_2.jpg" alt="Magazine Design Page 2">
+        </div>
+        <!-- Image 3 -->
+        <div class="project-image">
+          <img src="magazine_design_3.jpg" alt="Magazine Design Page 3">
+        </div>
+        <!-- Image 4 -->
+        <div class="project-image">
+          <img src="magazine_design_4.jpg" alt="Magazine Design Page 4">
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer with Link Sections and Last Updated -->
+    <footer class="footer">
+      <div class="footer-section">
+        <strong>Main</strong>
+        <a href="#work">Show</a>
+        <a href="#about">Tell</a>
+      </div>
+      <div class="footer-section">
+        <strong>Contact</strong>
+        <a href="https://www.linkedin.com/in/giancarlo-haidar/" target="_blank">LinkedIn ↗</a>
+        <a href="https://drive.google.com/file/d/1MbBoBFX_vRjV7aRjpS_mjMmPi963o-9F/view?usp=sharing" target="_blank">Resume ↗</a>
+      </div>
+      <div class="contact-message">
+        Let's have a coffee chat! <br>
+        <a href="mailto:giancarlo.a.haidar@gmail.com" class="email">giancarlo.a.haidar@gmail.com</a>
+      </div>
+      <div class="last-updated">
+        LAST UPDATED 2024-11-10
+      </div>
+    </footer>
+  </body>
+</html>
