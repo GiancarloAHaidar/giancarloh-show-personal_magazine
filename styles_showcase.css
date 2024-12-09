@@ -1,0 +1,348 @@
+      * {
+        color: #ffffff;
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        background-color: #0D0208;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.6;
+        scroll-behavior: smooth;
+        font-family: 'Archivo', sans-serif;
+      }
+
+      .container {
+        width: 100%;
+        padding: 0px 60px;
+        margin: auto;
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0px;
+        padding: 15px 60px;
+        z-index: 1000;
+        font-family: 'Roboto', sans-serif;
+      }
+
+      .header:after {
+        content: "";
+        position: absolute;
+        bottom: 0px;
+        left: 60px;
+        right: 60px;
+        height: 2px;
+        background-color: #292929ff;
+      }
+
+      .header-left {
+        text-align: left;
+      }
+
+      ..header-left {
+        text-align: left;
+      }
+
+      .header h1,
+      .header h2 {
+        font-weight: 400;
+      }
+
+      .header h1 {
+        font-size: 1.3rem;
+      }
+
+      .header h2 {
+        font-size: 1rem;
+        color: #707070ff;
+      }
+
+      .header-center {
+        position: absolute;
+        left: 50%;
+        /*
+        Code copied from: https: https//www.w3schools.com/cssref/css3_pr_transform.php
+        Author: W3Schools
+        Name: CSS transform Property
+        Description: The transform property applies a 2D or 3D transformation to an element. This property allows you to rotate, scale, move, skew, etc., elements.
+        Date retrieved: 2024-12-04
+        */
+        transform: translateX(-50%);
+        display: flex;
+        gap: 60px;
+      }
+
+      .header-center a {
+        text-decoration: none;
+        font-size: 1.1rem;
+        position: relative;
+      }
+
+      .header-center a.active {
+        font-weight: bold;
+        text-decoration: overline 2px;
+      }
+
+      .header-right {
+        margin-left: auto;
+        font-size: 1.5rem;
+        display: flex;
+        gap: 30px;
+      }
+
+      .header-right a {
+        text-decoration: none;
+        /*
+        Code copied from: https: https//www.w3schools.com/css/css3_transitions.asp
+        Author: W3Schools
+        Name: CSS Transitions
+        Description: CSS transitions allows you to change property values smoothly, over a given duration.
+        Date retrieved: 2024-12-04
+        */
+        transition: color 0.3s;
+        display: flex;
+        align-items: center;
+      }
+
+      a:hover {
+        /*
+        Code copied from: https: https://www.w3schools.com/css/css_important.asp
+        Author: W3Schools
+        Name: CSS The !important Rule
+        Description: The !important rule in CSS is used to add more importance to a property/value than normal.
+        Date retrieved: 2024-12-04
+        */
+        color: #008F11 !important;
+        /*
+        Code copied from: https://www.w3schools.com/css/css3_transitions.asp
+        Author: W3Schools
+        Name: CSS Transitions
+        Description: CSS transitions allows you to change property values smoothly, over a given duration.
+        Date retrieved: 2024-12-04
+        */
+        transition: color 0.3s ease;
+      }
+
+      .project-showcase {
+        width: 100%;
+        padding: 40px 60px;
+        overflow: visible;
+      }
+
+      .project-image-placeholder {
+        margin: 0px auto 20px;
+      }
+
+      .project-image-placeholder img {
+        width: 100%;
+        height: auto;
+        max-height: 49vw;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .project-layout {
+        display: flex;
+        align-items: flex-start;
+      }
+
+      .project-description {
+        flex: 1 1 33%;
+        font-size: 1rem;
+        text-align: left;
+        position: sticky;
+        top: 100px;
+        padding: 20px;
+        padding-right: 40px;
+        padding-bottom: 10px;
+        box-sizing: border-box;
+      }
+
+      ul li:before {
+        content: '★';
+        font-weight: bold;
+        color: #707070ff;
+        position: absolute;
+        left: 0px;
+      }
+
+      .project-details-and-images {
+        flex: 2 1 66%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .project-details {
+        padding: 20px 0px;
+      }
+
+      .details-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .details-item {
+        margin-right: 20px;
+        flex: 1 1 100px;
+        /*
+        Code copied from: https://www.w3schools.com/cssref/pr_text_white-space.php
+        Author: W3Schools
+        Name: CSS white-space Property
+        Description: The white-space property specifies how white-space inside an element is handled.
+        Date retrieved: 2024-12-0
+        */
+        white-space: nowrap;
+      }
+
+      .details-label {
+        display: block;
+        font-size: 1rem;
+        font-weight: bold;
+        color: #707070ff;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+      }
+
+      .details-value {
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 1.5;
+      }
+
+      .project-pdf-placeholder {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+      }
+
+      .project-pdf-placeholder img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+
+      /*
+        Code copied from: https://www.w3schools.com/tags/tag_figcaption.asp
+        Author: W3Schools
+        Name: HTML <figcaption> Tag
+        Description: The <strong> tag is used to define text with strong importance. The content inside is typically displayed in bold.
+        Date retrieved: 2024-12-0
+        */
+      .project-pdf-placeholder figcaption {
+        margin-top: 0px;
+        margin-bottom: 20px;
+        font-weight: lighter;
+        font-size: 1rem;
+        color: #707070ff;
+        text-transform: uppercase;
+        text-align: left;
+      }
+
+      .footer {
+        padding: 20px 60px;
+        font-size: 1rem;
+        color: #707070ff;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        background-color: transparent;
+        position: relative;
+        margin-top: auto;
+        font-family: 'Roboto', sans-serif;
+      }
+
+      .footer:before {
+        content: "";
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        height: 2px;
+        background-color: #292929ff;
+      }
+
+      .footer-section {
+        display: flex;
+        flex-direction: column;
+        margin-right: 40px;
+      }
+
+      .footer-section a {
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+      }
+
+      .footer-section strong {
+        color: #707070ff;
+        margin-bottom: 10px;
+      }
+
+      .contact-message {
+        text-align: left;
+        font-size: 1.2rem;
+        color: #707070ff;
+        margin-right: 40px;
+        margin-bottom: 20px;
+      }
+
+      .email {
+        text-align: left;
+        font-size: 1rem;
+        text-decoration: underline dotted;
+      }
+
+      .last-updated {
+        font-size: 1rem;
+        color: #707070ff;
+        text-transform: uppercase;
+        margin-right: 40px;
+        margin-bottom: 20px;
+      }
+
+      .header h1 a {
+        text-decoration: none;
+      }
+
+      .header h2 a {
+        color: #707070ff;
+        text-decoration: none;
+      }
+
+      @media (max-width: 767px) {
+        .header {
+          padding-right: 60px;
+        }
+
+        .header-center {
+          display: none;
+        }
+
+        .project-image-placeholder img {
+          min-height: 60vw;
+        }
+
+        .project-description {
+          position: static;
+          padding-right: 0px;
+        }
+
+        ul li:before {
+          left: 60px;
+        }
+
+        .project-layout {
+          display: grid;
+        }
+      }
